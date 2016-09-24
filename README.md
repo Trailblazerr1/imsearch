@@ -1,2 +1,3 @@
 # imsearch
-Search among lots of images in a flick
+Search among lots of images in a flick   
+Made by: django and Clarifai
