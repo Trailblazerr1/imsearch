@@ -1,0 +1,114 @@
+{% load staticfiles %}
+
+
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+	<style >
+		body{
+ background-image:url(#); 
+}
+
+.shadow{
+  font-family:Mr Dafoe, sans-serif;
+  font-size:5em;
+  text-align:center;
+  text-shadow: 0 -3px 0 #333,
+    0 6px 8px rgba(0,0,0,.4),
+    0 9px 10px rgba(0,0,0,.15),
+    0 30px 10px rgba(0,0,0,.18),
+    0 15px 10px rgba(0,0,0,.21);
+}
+	</style>
+		<title>Search results</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalabl	e=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="{% static 'app/css/main.css' %}" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body style="background-color: white;">
+	
+		<h1 class="text-center"> Search term </h1>
+  		<div class="col-lg-12">
+      <style>
+        .form-signin {
+          max-width: 550px;
+          padding: 15px;
+          margin: 0 auto;
+        }    
+      </style>
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html"><strong>Search results</strong> by HTML5 UP</a></h1>
+						<nav>
+							<ul>
+								<li><a href="#footer" class="icon fa-info-circle">About</a></li>
+							</ul>
+						</nav>
+					</header>
+<link href='http://fonts.googleapis.com/css?family=Mr+Dafoe' rel='stylesheet' type='text/css'>
+
+<div class="shadow">Results</div>
+				<!-- Main -->
+					<div id="main">
+							{% for name in data.items %}
+    							{% for i in name%}
+   
+    								{% for j in i%}
+										{% if j == inp %}
+						<article class="thumb">
+							<a href="{% static 'app/' %}{{ name.0 }}" class="image"><img src="{% static 'app/' %}{{ name.0 }}" alt="My image"/></a>
+							<h2>Magna feugiat lorem</h2>
+							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+							</article>						
+						
+
+							{% endif %}
+						{% endfor %}
+    				{% endfor %}
+    			{% endfor %}
+				</div>	
+				
+				<!-- Footer -->
+					<footer id="footer" class="panel">
+						<div class="inner split">
+							<div>
+								<section>
+									<h2>Magna feugiat sed adipiscing</h2>
+									<p>Jargon.</p>
+								</section>
+								<section>
+									<h2>Follow me on ...</h2>
+									<ul class="icons">
+										<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+										<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+										<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									</ul>
+								</section>
+								<p class="copyright">
+									&copy; Unttled. Design: <a href="#">HTML5 UP</a>.
+								</p>
+
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'app/js/jquery.min.js' %}"></script>
+			<script src="{% static 'app/js/jquery.poptrox.min.js' %}"></script>
+			<script src="{% static 'app/js/skel.min.js' %}"></script>
+			<script src="{% static 'app/js/util.js' %}"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="{% static 'app/js/main.js' %}"></script>
+
+	</body>
+</html>

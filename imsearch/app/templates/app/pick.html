@@ -1,0 +1,72 @@
+{% load staticfiles %}
+  
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+ background-image:url('http://goo.gl/1uZsu'); 
+}
+
+.shadow{	
+  font-family:Mr Dafoe, sans-serif;
+  font-size:8em;
+  text-align:center;
+  text-shadow: 0 -3px 0 #333,
+    0 6px 8px rgba(0,0,0,.4),
+    0 9px 10px rgba(0,0,0,.15),
+    0 30px 10px rgba(0,0,0,.18),
+    0 15px 10px rgba(0,0,0,.21);
+}	
+body {
+  background: #d3f4fd;
+}
+
+h1 {
+  font-family: 'Piedra', cursive;
+  font-size: 196px;
+  text-align: center;
+}
+
+.mask-sun{
+  background: url(https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-frc3/1091134_10151798721545450_1673602092_o.jpg) center center;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-animation: travelsun 12s linear infinite;
+  -moz-animation: travelSun 12s linear infinite;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+@-webkit-keyframes travelsun {
+  0% {background-position: left top;}
+  100% {background-position: right bottom}
+}
+
+@-moz-keyframes travelsun {
+  0% {background-position: left top;}
+  100% {background-position: right bottom}
+}
+</style>
+    <title>Pick for me</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'app/css/blog.css' %}">
+</head>
+<body>
+
+	<div>
+	<link href='http://fonts.googleapis.com/css?family=Mr+Dafoe' rel='stylesheet' type='text/css'>
+
+<div class="shadow">Picked</div>
+	{% for one in tag%}
+ <link href='http://fonts.googleapis.com/css?family=Piedra' rel='stylesheet' type='text/css'>
+  
+	<article class="mask-sun">
+  	<h1><a href="{{one}}" class="image">{{ one }}</a></h1>
+	</article>
+   
+  {% endfor%}
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+{% load staticfiles %}
+  
+<!DOCTYPE html>
+<html>
+<head>
+<style >
+  body{
+ background: #edebf2; 
+}
+
+.shadow{
+  font-family:Mr Dafoe, sans-serif;
+  font-size:10em;
+  text-align:center;
+  text-shadow: 0 -3px 0 #333,
+    0 6px 8px rgba(0,0,0,.4),
+    0 9px 10px rgba(0,0,0,.15),
+    0 30px 10px rgba(0,0,0,.18),
+    0 15px 10px rgba(0,0,0,.21);
+}
+</style>
+    <title>Search</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'app/css/blog.css' %}">
+</head>
+<body style="background-color: white;">
+<link href='http://fonts.googleapis.com/css?family=Mr+Dafoe' rel='stylesheet' type='text/css'>
+
+<div class="shadow">Search term</div>
+
+  <div class="col-lg-12">
+      <style>
+        .form-signin {
+          max-width: 550px;
+          padding: 15px;
+          margin: 0 auto;
+        }    
+      </style>
+
+      <p class="text-center"><a href="/app/pick/">Pick for me</a></p>
+      <div class="container text-center">
+          <form class="form-signin" id="login_form" method="post" action="/app/search/">
+            {% csrf_token %}
+
+            <br>
+            <input type="text" name="term" class="form-control" placeholder="Enter search term" value="" required autofocus>
+            <br>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Get Data</button>
+          </form>
+</body>
+</html>
